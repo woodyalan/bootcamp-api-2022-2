@@ -10,8 +10,15 @@ router.post("/", function (req, res) {
   res.send("Criação de produtos");
 });
 
-router.put("/", function (req, res) {
+router.put("/:id", function (req, res) {
+  console.log("Identificação do Produto", req.params.id);
+  console.log("Corpo da requisição", req.body);
   res.send("Atualização de produtos");
+});
+
+router.delete("/:id", function (req, res) {
+  console.log("Identificação do Produto", req.params.id);
+  res.send("Exclusão de produtos");
 });
 
 module.exports = router;
